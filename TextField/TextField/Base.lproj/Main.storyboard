@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KeyboardAndTextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-Rs-BAv">
+                                <rect key="frame" x="116" y="16" width="368" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="Gli-aM-YOu"/>
+                                    <constraint firstAttribute="width" constant="368" id="Hem-Qr-bA8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-aD-mon">
+                                <rect key="frame" x="16" y="56" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidEndExit:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="lOw-gT-KUz"/>
+                                    <action selector="textFieldEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="zJP-Ug-ePV"/>
+                                    <action selector="textFieldEditingDidBegin:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="ggw-Hq-9Js"/>
+                                    <action selector="textFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="qu2-lS-GCL"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNj-GP-f0S">
+                                <rect key="frame" x="16" y="16" width="98" height="30"/>
+                                <state key="normal" title="hide keyboard">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dWf-is-b9f"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmw-2D-UVC">
+                                <rect key="frame" x="16" y="120" width="200" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-r1-7st">
+                                        <rect key="frame" x="8" y="8" width="150" height="150"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ns6-8q-NK5">
+                                                <rect key="frame" x="0.0" y="85" width="150" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.32249653070000001" green="0.66666666669999997" blue="0.31331513900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fgu-Rs-BAv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="80S-3J-HW5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fgu-Rs-BAv" secondAttribute="trailing" constant="100" id="Bs0-nP-yNp"/>
+                            <constraint firstItem="KcC-aD-mon" firstAttribute="top" secondItem="fgu-Rs-BAv" secondAttribute="bottom" constant="20" id="Flu-7w-aRm"/>
+                            <constraint firstItem="KcC-aD-mon" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XDq-FT-Aw5"/>
+                            <constraint firstItem="KcC-aD-mon" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="nex-Oe-dJc"/>
+                            <constraint firstItem="fgu-Rs-BAv" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="16" id="vJS-Lz-7Qu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="KcC-aD-mon" id="lr6-uX-aRr"/>
+                        <outlet property="label" destination="fgu-Rs-BAv" id="FV9-ay-c6I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
