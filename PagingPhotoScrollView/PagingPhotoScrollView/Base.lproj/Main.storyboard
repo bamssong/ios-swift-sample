@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="PagingPhotoScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dG-BD-dJM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="InA-be-iaz"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s29-S2-975">
+                                <rect key="frame" x="149.5" y="540" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="O2j-NJ-7lL"/>
+                                    <constraint firstAttribute="height" constant="40" id="Vod-sk-GMc"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="handlePageControlValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="nUV-ay-edz"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9dG-BD-dJM" secondAttribute="bottom" id="HYo-d4-oRS"/>
+                            <constraint firstItem="9dG-BD-dJM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="N02-xj-mWQ"/>
+                            <constraint firstItem="9dG-BD-dJM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RxR-fs-vqv"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="s29-S2-975" secondAttribute="bottom" constant="20" id="g5r-Pr-xpa"/>
+                            <constraint firstAttribute="trailing" secondItem="9dG-BD-dJM" secondAttribute="trailing" id="nnb-sx-gAB"/>
+                            <constraint firstAttribute="centerX" secondItem="s29-S2-975" secondAttribute="centerX" id="uEg-hw-oQ4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="s29-S2-975" id="28G-lF-YSe"/>
+                        <outlet property="scrollView" destination="9dG-BD-dJM" id="xZK-4J-jHR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
