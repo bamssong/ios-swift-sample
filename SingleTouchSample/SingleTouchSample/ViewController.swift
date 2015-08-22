@@ -30,11 +30,11 @@ class ViewController: UIViewController {
         let touch = touches.first as! UITouch
         let point = touch.locationInView(touch.view)
         
-//        if CGRectContainsPoint(imageView.frame, point) {
-//            holdingImage = true
-//        } else {
-//            holdingImage = false
-//        }
+        if CGRectContainsPoint(imageView.frame, point) {
+            holdingImage = true
+        } else {
+            holdingImage = false
+        }
         
     }
     
