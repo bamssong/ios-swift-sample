@@ -10,6 +10,21 @@ import UIKit
 
 class UICutomView: UIView {
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        //code..
+    }
+    
+    convenience init() {
+        self.init(frame:CGRectZero)
+    }
+
+    //
+    required init(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+    }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -20,6 +35,5 @@ class UICutomView: UIView {
         
         str.drawAtPoint(CGPointMake(10,10), withAttributes: attr)
     }
-    
 
 }
