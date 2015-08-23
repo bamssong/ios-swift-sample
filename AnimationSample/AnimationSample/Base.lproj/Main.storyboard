@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="AnimationSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-bu-gnJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="이동" id="dZ9-T1-CxX">
+                                        <connections>
+                                            <action selector="moveBlock:" destination="vXZ-lx-hvc" id="CbB-zA-Pyi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="d8i-I8-wZY"/>
+                                    <barButtonItem title="확대/축소" id="5sr-NJ-rfh">
+                                        <connections>
+                                            <action selector="scaleBlock:" destination="vXZ-lx-hvc" id="5z9-sE-YRw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rBW-Cu-pkE"/>
+                                    <barButtonItem title="연속" id="C3J-9Z-MY7">
+                                        <connections>
+                                            <action selector="animateMulti:" destination="vXZ-lx-hvc" id="7PR-ha-YoC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Umj-AR-NHc"/>
+                                    <barButtonItem title="정지" id="AyY-Nt-wLu">
+                                        <connections>
+                                            <action selector="stopAnimateMulti:" destination="vXZ-lx-hvc" id="sFO-5K-q8A"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzq-db-x7k">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TxE-Pi-KWf"/>
+                                    <constraint firstAttribute="width" constant="150" id="v9r-Jy-FkR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Acd-bu-gnJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="3ga-Dh-3b2"/>
+                            <constraint firstItem="Acd-bu-gnJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="oVr-0d-49B"/>
+                            <constraint firstAttribute="centerX" secondItem="pzq-db-x7k" secondAttribute="centerX" id="pBu-4O-XqL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Acd-bu-gnJ" secondAttribute="trailing" constant="-16" id="wUZ-AV-XaR"/>
+                            <constraint firstAttribute="centerY" secondItem="pzq-db-x7k" secondAttribute="centerY" id="z75-oB-5S4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="block" destination="pzq-db-x7k" id="nEj-PZ-SBI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mvU-9U-9CD">
+            <objects>
+                <viewController id="k45-qg-9KC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9b6-8E-jeG"/>
+                        <viewControllerLayoutGuide type="bottom" id="GCy-V2-CdS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n78-SO-fED">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYC-oL-RJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

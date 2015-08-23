@@ -9,11 +9,13 @@
 import Foundation
 
 class Product{
+    var id : Int!
     var name : String!
     var price : Int!
     var image : String!
     
-    init(name : String, productPrice price : Int, image : String){
+    init(id : Int, name : String, productPrice price : Int, image : String){
+        self.id = id
         self.name = name
         self.price = price
         self.image = image

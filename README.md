@@ -5,6 +5,35 @@
 ## AlertSample
 UIAlertController 사용
 
+## AnimationSample
+```swift
+
+UIView.animateWithDuration(1.0, animations: { () -> Void in
+    self.move(self.block)
+})
+
+func move(view : UIView) -> Void {
+    let width = self.view.frame.width - view.frame.width
+    let height = self.view.frame.height - view.frame.height - 64
+
+    var x = arc4random_uniform(UInt32(width))
+    var y = arc4random_uniform(UInt32(height))
+
+    println("width : \(width) ,height \(height)")
+    println("x : \(x) ,y \(y)")
+    view.center = CGPointMake(CGFloat(x), CGFloat(y))
+}
+
+func scale(view : UIView) -> Void {
+    let length = arc4random_uniform(200) + 100
+    println("length : \(length)")
+    view.frame.size = CGSizeMake(CGFloat(length), CGFloat(length))
+}
+
+
+```
+
+
 ## CartAndCatalog
 
 > 기능 미완. ( 다른 section에 item 추가하기 )
@@ -143,7 +172,4 @@ UISegmentedControll
 stateCountProgress.setProgress(Float(questionCount)/Float(MAX_QUESTION_COUNT), animated: true)
 
 let dialog = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-
-
-
 ```
