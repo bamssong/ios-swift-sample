@@ -114,6 +114,10 @@ if let imageUrl = NSURL(string: "http://cfile25.uf.tistory.com/image/2334C24F546
 }
 ```
 
+## ModalSceneSample
+페이지 전환 방법 : modal scene.
+
+
 ## PagingPhotoScrollView
 
 > bug : 페이지 이동 시 PageContrll 갱신이 안되는 현상.
