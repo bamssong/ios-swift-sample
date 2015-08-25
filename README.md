@@ -151,6 +151,17 @@ override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
 	...
 }
 ```
+## StoryboardSample
+
+Main.storyboard -> StoryboardContainerView.storyboard
+
+```swift
+let storyboard = UIStoryboard(name: "StoryboardContainerView", bundle: nil)
+let vc = storyboard.instantiateViewControllerWithIdentifier("StoryboardContainerViewRoot") as! UIViewController
+presentViewController(vc, animated: true, completion: nil)
+
+```
+
 
 ## ThreeViewsByCode
 ```swift
