@@ -138,6 +138,38 @@ UIButton : target-action
 
 UIImageView : named
 
+## ShoppingViewerFor11st
+> open ShoppingViewerFor11st.xcworkspace
+
+open api : https://developers.skplanetx.com/
+
+### install cocoapods
+https://cocoapods.org/
+
+### get started 
+> $ pod init
+
+```
+platform :ios, '8.0'
+use_frameworks!
+
+target 'ShoppingViewerFor11st' do
+  pod 'Alamofire', '~> 1.3'
+  pod 'SwiftyJSON', '~> 2.2.1'
+end
+
+target 'ShoppingViewerFor11stTests' do
+  pod 'Alamofire', '~> 1.3'
+  pod 'SwiftyJSON', '~> 2.2.1'
+end
+```
+> $ pod install
+
+
+### use lib 
+
+network : https://github.com/Alamofire/Alamofire
+swift json : https://github.com/SwiftyJSON/SwiftyJSON
 
 
 ## SingleTouchSample
