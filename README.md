@@ -123,6 +123,29 @@ if let imageUrl = NSURL(string: "http://cfile25.uf.tistory.com/image/2334C24F546
 ## ModalSceneSample
 페이지 전환 방법 : modal scene.
 
+## NavigationSceneSample
+naviagtion scene 이동.
+
+```swift
+@IBAction func showSecond1(sender: AnyObject) {
+    self.performSegueWithIdentifier("PUSH_SEUGE", sender: sender)
+}
+
+@IBAction func showSecond2(sender: AnyObject) {
+    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SECOND_VC") as! SecondViewController
+    vc.data = textField.text
+    
+    self.showViewController(vc, sender: sender)
+}
+
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "PUSH_SEUGE" {
+        let second = segue.destinationViewController as! SecondViewController
+        second.data = textField.text
+    }
+}
+```
+
 
 ## PagingPhotoScrollView
 
