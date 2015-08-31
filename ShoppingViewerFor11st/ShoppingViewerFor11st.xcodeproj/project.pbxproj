@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C80B0BC77CC62398C04128A /* Pods_ShoppingViewerFor11stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14FB157E309F5462CBC7C93 /* Pods_ShoppingViewerFor11stTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		63A7450F279251BCED890DCC /* Pods_ShoppingViewerFor11st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F5A28D7228BBB2889E7AA3 /* Pods_ShoppingViewerFor11st.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		764E1ED41B8F57D600179F81 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 764E1ED31B8F57D600179F81 /* README.md */; };
 		76E4FDF81B8DD4DA00CC9667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4FDF71B8DD4DA00CC9667 /* AppDelegate.swift */; };
 		76E4FDFB1B8DD4DA00CC9667 /* ShoppingViewerFor11st.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76E4FDF91B8DD4DA00CC9667 /* ShoppingViewerFor11st.xcdatamodeld */; };
 		76E4FDFD1B8DD4DA00CC9667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4FDFC1B8DD4DA00CC9667 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		123FF6CAC628521EE377BE1D /* Pods-ShoppingViewerFor11st.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingViewerFor11st.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingViewerFor11st/Pods-ShoppingViewerFor11st.debug.xcconfig"; sourceTree = "<group>"; };
 		40F5A28D7228BBB2889E7AA3 /* Pods_ShoppingViewerFor11st.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingViewerFor11st.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F7DE5EBACE0DB5C55EB4F7 /* Pods-ShoppingViewerFor11stTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingViewerFor11stTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingViewerFor11stTests/Pods-ShoppingViewerFor11stTests.release.xcconfig"; sourceTree = "<group>"; };
+		764E1ED31B8F57D600179F81 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		76E4FDF21B8DD4DA00CC9667 /* ShoppingViewerFor11st.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingViewerFor11st.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E4FDF61B8DD4DA00CC9667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76E4FDF71B8DD4DA00CC9667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		76E4FDE91B8DD4DA00CC9667 = {
 			isa = PBXGroup;
 			children = (
+				764E1ED31B8F57D600179F81 /* README.md */,
 				76E4FDF41B8DD4DA00CC9667 /* ShoppingViewerFor11st */,
 				76E4FE0D1B8DD4DA00CC9667 /* ShoppingViewerFor11stTests */,
 				76E4FDF31B8DD4DA00CC9667 /* Products */,
@@ -359,6 +362,7 @@
 				76E4FDFD1B8DD4DA00CC9667 /* ViewController.swift in Sources */,
 				76E4FE1D1B8DD67300CC9667 /* ProductManager.swift in Sources */,
 				76E4FDFB1B8DD4DA00CC9667 /* ShoppingViewerFor11st.xcdatamodeld in Sources */,
+				764E1ED41B8F57D600179F81 /* README.md in Sources */,
 				76E4FE201B8DEA2200CC9667 /* ProductCell.swift in Sources */,
 				76E4FDF81B8DD4DA00CC9667 /* AppDelegate.swift in Sources */,
 				76E4FE1B1B8DD59800CC9667 /* DetailViewController.swift in Sources */,
