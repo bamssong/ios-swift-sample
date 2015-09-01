@@ -227,6 +227,27 @@ greenView.alpha = 0.8
 
 self.view.addSubview(greenView)
 ```
+
+## TodoBam
+
+```swift
+NSNotificationCenter.defaultCenter().postNotificationName(ModelChangedNotification, object: nil)
+
+
+func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell = tableView.dequeueReusableCellWithIdentifier("TODO_CELL") as! UITableViewCell
+    var todo = TodoManager.sharedManager.todoList[indexPath.row]
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a" // superset of OP's format
+    let duedate = dateFormatter.stringFromDate(todo.duedate)
+    cell.detailTextLabel!.text = duedate
+    cell.textLabel!.text = todo.title
+    return cell
+}
+
+```
+
 ## UIDynamicsSample
 ```swift
 self.animator = UIDynamicAnimator(referenceView: self.view)
