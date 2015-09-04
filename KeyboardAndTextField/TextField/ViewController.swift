@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     
     func findFirstResponder(view :UIView) -> UIResponder? {
         for v in view.subviews {
-            if (v as? UIControl != nil) {
+            if (v is UIControl) {
                 if v.isFirstResponder() {
                     return (v as! UIResponder)
                 }
