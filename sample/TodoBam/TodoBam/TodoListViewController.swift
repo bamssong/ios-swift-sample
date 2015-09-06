@@ -51,7 +51,7 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
         cell.textLabel!.text = todo.title
         return cell
     }
-    
+
 
     /*
     // MARK: - Navigation
