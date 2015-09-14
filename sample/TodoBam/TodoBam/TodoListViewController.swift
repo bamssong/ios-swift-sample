@@ -13,10 +13,10 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func handleAddTodo(sender: AnyObject) {
-        var todo = Todo()
-        todo.title = "text title"
-        todo.duedate = NSDate()
-        TodoManager.sharedManager.add(todo)
+//        var todo = Todo()
+//        todo.title = "text title"
+//        todo.duedate = NSDate()
+//        TodoManager.sharedManager.add(todo)
 
     }
     
@@ -30,37 +30,52 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
     
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let segueID = segue.identifier {
+            switch segueID {
+            case "EDIT":
+                if let detailViewController = segue.destinationViewController as? DetailViewController{
+                    detailViewController.type = segueID
+                }
+                println("edit~~")
+            case "NEW":
+                if let detailViewController = segue.destinationViewController as? DetailViewController{
+                    detailViewController.type = segueID
+                }
+                println("new~~")
+            default:
+                var error: NSError?
+                NSException.raise("Exception", format:"Error: %@", arguments:getVaList([error ?? "nil"]))
+            }
+        }
+    }
     
+    
+    @IBAction func unwindToVC(segue:UIStoryboardSegue) {
+        println("Unwind Segue!!")
+    }
+    
+    
+    // MARK: - TodoManager
     func changedTodo() {
         tableView.reloadData()
     }
     
-    
+    // MARK: - UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TodoManager.sharedManager.todoList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TODO_CELL") as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("TODO_CELL") as! TodoTableViewCell
         var todo = TodoManager.sharedManager.todoList[indexPath.row]
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a" // superset of OP's format
-        let duedate = dateFormatter.stringFromDate(todo.duedate)
-        cell.detailTextLabel!.text = duedate
-        cell.textLabel!.text = todo.title
+
+        cell.labelTitle.text = todo.title
+        cell.labelText.text = todo.text
         return cell
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -11,8 +11,10 @@ import Foundation
 let ModelChangedNotification = "ModelChangedNotification"
 
 
-struct Todo {
+
+struct Todo{
     var title:String!
+    var text:String!
     var duedate:NSDate!
 }
 
