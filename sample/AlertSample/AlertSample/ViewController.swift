@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     @IBAction func clinckBasicAlertViewStyle(sender: AnyObject) {
         let dialog = UIAlertController(title: "title", message: "Basic AlertView Style", preferredStyle: UIAlertControllerStyle.Alert)
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in println("cancel")})
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: {(action) -> Void in println("ok")})
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in print("cancel")})
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: {(action) -> Void in print("ok")})
 
         dialog.addAction(okAction)
         dialog.addAction(cancelAction)
@@ -28,11 +28,11 @@ class ViewController: UIViewController {
     @IBAction func clickAlertStyleWithTextField(sender: AnyObject) {
         let dialog = UIAlertController(title: "title", message: "AlertSytle with TextField", preferredStyle: UIAlertControllerStyle.Alert)
         
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in println("cancel")})
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in print("cancel")})
         let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
-            let userInput = dialog.textFields![0] as! UITextField
+            let userInput = dialog.textFields![0] 
             self.label.text = userInput.text
-            println("ok")})
+            print("ok")})
         
         
         func addTextField(textField: UITextField!){
@@ -49,10 +49,10 @@ class ViewController: UIViewController {
     
     @IBAction func clickBasicActionsheetStyle(sender: AnyObject) {
         let dialog = UIAlertController(title: "title", message: "Basic AlertView Style", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in println("cancel")})
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: {(action) -> Void in println("ok")})
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: {(action) -> Void in print("cancel")})
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: {(action) -> Void in print("ok")})
 
-        let otherAction = UIAlertAction(title: "otherAction", style: UIAlertActionStyle.Destructive, handler: {(action) -> Void in println("ok")})
+        let otherAction = UIAlertAction(title: "otherAction", style: UIAlertActionStyle.Destructive, handler: {(action) -> Void in print("ok")})
 
         dialog.addAction(okAction)
         dialog.addAction(cancelAction)

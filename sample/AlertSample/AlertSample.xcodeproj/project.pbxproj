@@ -156,6 +156,8 @@
 		768C54D31B84486C0036DA62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = bamssong;
 				TargetAttributes = {
@@ -409,6 +411,7 @@
 				768C54FC1B84486C0036DA62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768C54FD1B84486C0036DA62 /* Build configuration list for PBXNativeTarget "AlertSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				768C54FF1B84486C0036DA62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

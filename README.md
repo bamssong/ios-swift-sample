@@ -8,7 +8,7 @@
 
 # ios-swift-sample
 
-## Hello
+## hello
 iOS 프로젝트 만드는 방법.
 
 
@@ -18,14 +18,15 @@ storyboard 사용에 관련 샘플 및 설명.
 [http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus](http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus/)
 
 
+## sample 
 
-
+### AlertSample
+UIAlertController 사용
 
 ==
 <정리중>
 
-## AlertSample
-UIAlertController 사용
+
 
 ## AnimationSample
 ```swift
