@@ -5,8 +5,24 @@
 <br>[cocoa controls](https://www.cocoacontrols.com/)
 
 
+
 # ios-swift-sample
 
+## Hello
+iOS 프로젝트 만드는 방법.
+
+
+## storyboard
+storyboard 사용에 관련 샘플 및 설명.
+
+[http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus](http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus/)
+
+
+
+
+
+==
+<정리중>
 
 ## AlertSample
 UIAlertController 사용
