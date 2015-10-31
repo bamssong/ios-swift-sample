@@ -23,6 +23,12 @@ storyboard 사용에 관련 샘플 및 설명.
 ### AlertSample
 UIAlertController 사용
 
+## cocoapod
+
+### SCLAlertViewSample
+https://github.com/vikmeup/SCLAlertView-Swift
+
+
 ==
 <정리중>
 
