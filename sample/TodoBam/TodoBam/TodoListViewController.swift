@@ -38,14 +38,14 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
                 if let detailViewController = segue.destinationViewController as? DetailViewController{
                     detailViewController.type = segueID
                 }
-                println("edit~~")
+                print("edit~~")
             case "NEW":
                 if let detailViewController = segue.destinationViewController as? DetailViewController{
                     detailViewController.type = segueID
                 }
-                println("new~~")
+                print("new~~")
             default:
-                var error: NSError?
+                let error: NSError?
                 NSException.raise("Exception", format:"Error: %@", arguments:getVaList([error ?? "nil"]))
             }
         }
@@ -53,7 +53,7 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
     
     
     @IBAction func unwindToVC(segue:UIStoryboardSegue) {
-        println("Unwind Segue!!")
+        print("Unwind Segue!!")
     }
     
     
@@ -68,8 +68,8 @@ class TodoListViewController: UIViewController ,TodoManagerDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TODO_CELL") as! TodoTableViewCell
-        var todo = TodoManager.sharedManager.todoList[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("TODO_CELL") as! TodoTableViewCell
+        let todo = TodoManager.sharedManager.todoList[indexPath.row]
 
         cell.labelTitle.text = todo.title
         cell.labelText.text = todo.text

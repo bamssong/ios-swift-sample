@@ -18,7 +18,7 @@ struct Todo{
     var duedate:NSDate!
 }
 
-struct TodoPrintable : Printable {
+struct TodoPrintable : CustomStringConvertible {
     var todo : Todo?
     
     init(item : Todo) {
@@ -30,7 +30,7 @@ struct TodoPrintable : Printable {
     }
     
     var description: String {
-        var desc = "title: \(todo?.title) \nduedate : \(todo?.duedate)"
+        let desc = "title: \(todo?.title) \nduedate : \(todo?.duedate)"
         return desc
     }
 }

@@ -17,7 +17,7 @@ class QeuryTodoManager {
         todo.title = "test"
         todo.duedate = NSDate()
         
-        println(TodoPrintable(item: todo))
+        print(TodoPrintable(item: todo))
         return true
     }
 }

@@ -24,7 +24,7 @@ class TodoBamTests: XCTestCase {
     func testExample() {
         var result = false
         
-        var qeuryTodoManger = QeuryTodoManager()
+        let qeuryTodoManger = QeuryTodoManager()
         result = qeuryTodoManger.testCreateTodo()
         
         XCTAssert(result, "Pass")

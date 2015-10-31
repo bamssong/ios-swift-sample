@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     }
  
     override func viewWillDisappear(animated: Bool) {
-        println("detail finish -> need to save.")
+        print("detail finish -> need to save.")
     }
     
     /*
