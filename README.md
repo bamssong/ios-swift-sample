@@ -9,7 +9,7 @@
 # ios-swift-sample
 
 ## hello
-iOS 프로젝트 만드는 방법.
+[iOS 프로젝트 만드는 방법](https://github.com/bamssong/ios-swift-sample/blob/master/hello/hello.md)
 
 
 ## storyboard
