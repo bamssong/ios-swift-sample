@@ -8,22 +8,23 @@
 
 # ios-swift-sample
 
+--
 ## hello
 [iOS 프로젝트 만드는 방법](https://github.com/bamssong/ios-swift-sample/blob/master/hello/hello.md)
 
-
+--
 ## storyboard
 storyboard 사용에 관련 샘플 및 설명.
 
 [http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus](http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus/)
 
-
+--
 ## cocoapod
 
-### SCLAlertViewSample
+SCLAlertViewSample<br>
 [https://github.com/vikmeup/SCLAlertView-Swift](https://github.com/vikmeup/SCLAlertView-Swift)
 
-### Google Map
+Google Map<br>
 [https://developers.google.com/maps/documentation/ios-sdk/?hl=ko](https://developers.google.com/maps/documentation/ios-sdk/?hl=ko)
 
 
