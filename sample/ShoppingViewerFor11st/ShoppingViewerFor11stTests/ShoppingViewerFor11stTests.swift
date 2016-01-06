@@ -35,7 +35,7 @@ class ShoppingViewerFor11stTests: XCTestCase {
                     let ProductPrice = product["ProductPrice"].int
                     let ProductImage100 = product["ProductImage100"].string
                     let DetailPageUrl = product["DetailPageUrl"].string
-                    println("\(product)")
+                    print("\(product)")
                 }
             }
             expectation.fulfill()

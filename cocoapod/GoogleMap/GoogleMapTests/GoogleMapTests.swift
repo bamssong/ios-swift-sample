@@ -1,15 +1,15 @@
 //
-//  HelloSwiftTests.swift
-//  HelloSwiftTests
+//  GoogleMapTests.swift
+//  GoogleMapTests
 //
-//  Created by dev.bamssong on 2015. 9. 6..
-//  Copyright (c) 2015년 bamssong. All rights reserved.
+//  Created by dev.bamssong on 2016. 1. 6..
+//  Copyright © 2016년 bamssong. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import GoogleMap
 
-class HelloSwiftTests: XCTestCase {
+class GoogleMapTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class HelloSwiftTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }

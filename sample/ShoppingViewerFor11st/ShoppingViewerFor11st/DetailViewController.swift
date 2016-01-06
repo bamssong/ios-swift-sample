@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        println(detailUrl)
+        print(detailUrl)
         
         if let url = NSURL(string: detailUrl) {
             let request = NSURLRequest(URL: url)

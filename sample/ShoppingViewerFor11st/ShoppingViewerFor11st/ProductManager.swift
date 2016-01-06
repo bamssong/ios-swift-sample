@@ -27,7 +27,7 @@ class ProductManager {
     var products = [(String, Int, String, String)]()
     
     
-    func searchProduct(#search : String, searchResponse : (result : JSON!, error : String!) -> Void) {
+    func searchProduct(search search : String, searchResponse : (result : JSON!, error : String!) -> Void) {
         let parameters = [
             "appKey": "must need api key for https://developers.skplanetx.com",
             "format":"json",

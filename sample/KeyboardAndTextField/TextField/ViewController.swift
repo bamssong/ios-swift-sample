@@ -86,11 +86,11 @@ class ViewController: UIViewController {
         for v in view.subviews {
             if (v is UIControl) {
                 if v.isFirstResponder() {
-                    return (v as! UIResponder)
+                    return (v as UIResponder)
                 }
             } else {
                 if v.subviews.count > 0 {
-                    return findFirstResponder(v as! UIView)
+                    return findFirstResponder(v )
                 }
             }
         }

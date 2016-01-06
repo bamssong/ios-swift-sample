@@ -1,21 +1,21 @@
 //
 //  AppDelegate.swift
-//  HelloSwift
+//  GoogleMap
 //
-//  Created by dev.bamssong on 2015. 9. 6..
-//  Copyright (c) 2015년 bamssong. All rights reserved.
+//  Created by dev.bamssong on 2016. 1. 6..
+//  Copyright © 2016년 bamssong. All rights reserved.
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("YOUR_API_KEY");
         return true
     }
 

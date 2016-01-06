@@ -156,6 +156,8 @@
 		76E701351B84BE8900160770 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = bamssong;
 				TargetAttributes = {
@@ -409,6 +411,7 @@
 				76E7015E1B84BE8900160770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76E7015F1B84BE8900160770 /* Build configuration list for PBXNativeTarget "KeyboardAndTextFieldTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				76E701611B84BE8900160770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

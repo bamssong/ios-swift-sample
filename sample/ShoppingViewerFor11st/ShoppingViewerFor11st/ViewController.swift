@@ -20,7 +20,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let searchWord = searchBar.text
-        println(searchWord)
+        print(searchWord)
         
         searchBar.resignFirstResponder()
         
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
                 
                 self.tableView.reloadData()
             } else {
-                println(error)
+                print(error)
                 self.showNotiDialog("네트워크 에러", message: "잠시 후 다시 시도해주세요.")
             }
         }
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
 
     func showNotiDialog(title : String, message : String){
         let dialog = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: {(action) -> Void in println("ok")})
+        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.Default, handler: {(action) -> Void in print("ok")})
         
         dialog.addAction(okAction)
         self.presentViewController(dialog, animated: true, completion: nil)
@@ -62,8 +62,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : ProductCell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
-        var product = ProductManager.sharedManager.products[indexPath.row]
+        let cell : ProductCell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
+        let product = ProductManager.sharedManager.products[indexPath.row]
         
         
         cell.productNameLabel.text = product.0 ?? ""
@@ -85,8 +85,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DETAIL_SEGUE" {
             if let vc = segue.destinationViewController as? DetailViewController {
-                if let index = tableView.indexPathForSelectedRow()?.row {
-                    var product = ProductManager.sharedManager.products[index]
+                if let index = tableView.indexPathForSelectedRow?.row {
+                    let product = ProductManager.sharedManager.products[index]
                     vc.detailUrl = product.3
                 }
             }

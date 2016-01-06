@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'GoogleMap' do
+	pod 'GoogleMaps'
+end
+
+target 'GoogleMapTests' do
+	
+end
+
+target 'GoogleMapUITests' do
+
+end
+

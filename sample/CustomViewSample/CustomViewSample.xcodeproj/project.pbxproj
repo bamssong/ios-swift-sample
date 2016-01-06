@@ -159,6 +159,8 @@
 		764143AA1B870F7D000F41A6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = bamssong;
 				TargetAttributes = {
@@ -413,6 +415,7 @@
 				764143D31B870F7D000F41A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		764143D41B870F7D000F41A6 /* Build configuration list for PBXNativeTarget "CustomViewSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +424,7 @@
 				764143D61B870F7D000F41A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

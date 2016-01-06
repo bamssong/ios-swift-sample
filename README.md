@@ -18,19 +18,56 @@ storyboard 사용에 관련 샘플 및 설명.
 [http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus](http://mathewsanders.com/designing-adaptive-layouts-for-iphone-6-plus/)
 
 
+## cocoapod
+
+### SCLAlertViewSample
+[https://github.com/vikmeup/SCLAlertView-Swift](https://github.com/vikmeup/SCLAlertView-Swift)
+
+### Google Map
+[https://developers.google.com/maps/documentation/ios-sdk/?hl=ko](https://developers.google.com/maps/documentation/ios-sdk/?hl=ko)
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+----
+
+
+
+
+
+
+
+
+## scene 만들기
+View & View Controller로 구성.
+
+### 해상도
+Auto Layout : constraints(제약조건) 에 따라 화면에 뷰 표시<br>
+Size classes
+
+
+### CustomViewSample
+drawRect
+init(frame: CGRect)
+
+
+
+
 ## sample 
 
 ### AlertSample
 UIAlertController 사용
 
-## cocoapod
+### KeyboardAndTextField
 
-### SCLAlertViewSample
-https://github.com/vikmeup/SCLAlertView-Swift
-
-
-==
-<정리중>
 
 
 
@@ -83,9 +120,6 @@ navigation controller + tab bar controller
 ## CartAndCatalogForCoreData
 CartAndCatalog2 + coredata
 
-## CustomViewSample
-drawRect
-init(frame: CGRect)
 
 ## DrawingViewSample
 custom view 

@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  HelloSwift
+//  Scene
 //
-//  Created by dev.bamssong on 2015. 9. 6..
-//  Copyright (c) 2015년 bamssong. All rights reserved.
+//  Created by dev.bamssong on 2015. 12. 15..
+//  Copyright © 2015년 Nestberg Inc. All rights reserved.
 //
 
 import UIKit

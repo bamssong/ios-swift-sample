@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wTQ-qy-qWF">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--map-->
+        <scene sceneID="ioZ-ep-oQx">
+            <objects>
+                <viewController title="map" id="fA6-mh-AQS" customClass="MapViewController" customModule="GoogleMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DvZ-dg-HBd"/>
+                        <viewControllerLayoutGuide type="bottom" id="FsY-eX-ntj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bjw-dL-DnY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-Mp-roR" customClass="GMSMapView">
+                                <rect key="frame" x="-4" y="64" width="383" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="8yz-90-EGR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mdf-Mp-roR" firstAttribute="leading" secondItem="bjw-dL-DnY" secondAttribute="leadingMargin" constant="-20" id="cq4-cV-x8a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mdf-Mp-roR" secondAttribute="trailing" constant="-20" id="gnf-YY-vhd"/>
+                            <constraint firstItem="mdf-Mp-roR" firstAttribute="top" secondItem="DvZ-dg-HBd" secondAttribute="bottom" id="lH3-vk-fca"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="map" id="fje-GH-fw6"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="mdf-Mp-roR" id="yF9-2E-0B1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Su9-8W-bzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550.5" y="424.5"/>
+        </scene>
+        <!--full screen-->
+        <scene sceneID="rqa-6q-WBO">
+            <objects>
+                <viewController title="full screen" id="P1F-yi-Ygf" customClass="FullScreenViewController" customModule="GoogleMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LrF-OA-wYm"/>
+                        <viewControllerLayoutGuide type="bottom" id="juy-Ja-HBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r5Q-oJ-I5F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="full screen map" id="rSj-fF-qAD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLM-Jx-IUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="391"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Gd-03-k8P">
+            <objects>
+                <navigationController id="wTQ-qy-qWF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJZ-zJ-QKU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cff-EE-OnU" kind="relationship" relationship="rootViewController" id="JkF-Zk-EKH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ag8-q9-GZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="-389"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dRG-HP-GjR">
+            <objects>
+                <tabBarController id="Cff-EE-OnU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ovh-uY-oyY"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Oxv-Vv-6fj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="P1F-yi-Ygf" kind="relationship" relationship="viewControllers" id="cYc-7k-4By"/>
+                        <segue destination="fA6-mh-AQS" kind="relationship" relationship="viewControllers" id="xt0-aD-s7k"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waw-q7-GRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="-389"/>
+        </scene>
+    </scenes>
+</document>

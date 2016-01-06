@@ -159,6 +159,7 @@
 		76E3FAF51B8B01970009012D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = bamssong;
 				TargetAttributes = {
@@ -413,6 +414,7 @@
 				76E3FB1E1B8B01970009012D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76E3FB1F1B8B01970009012D /* Build configuration list for PBXNativeTarget "NavigationSceneSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +423,7 @@
 				76E3FB211B8B01970009012D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
