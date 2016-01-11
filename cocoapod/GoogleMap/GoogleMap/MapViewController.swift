@@ -21,6 +21,12 @@ class MapViewController: UIViewController {
         
         mapView.camera = camera
         mapView.myLocationEnabled = true
+        
+        var marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.023183))
+        marker.map = mapView;
+        
+        marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.027183))
+        marker.map = mapView;
     }
 
     override func didReceiveMemoryWarning() {

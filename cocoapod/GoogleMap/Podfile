@@ -6,10 +6,10 @@ target 'GoogleMap' do
 end
 
 target 'GoogleMapTests' do
-	
+	pod 'GoogleMaps'
 end
 
 target 'GoogleMapUITests' do
-
+	pod 'GoogleMaps'
 end
 

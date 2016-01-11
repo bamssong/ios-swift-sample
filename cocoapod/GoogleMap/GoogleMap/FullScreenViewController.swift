@@ -21,11 +21,12 @@ class FullScreenViewController: UIViewController {
         mapView.myLocationEnabled = true
         self.view = mapView
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(37.522831, 127.027183)
-        marker.title = "nestberg"
-        marker.snippet = "hello?!"
-        marker.map = mapView
+        var marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.023183))
+        marker.map = mapView;
+        
+        marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.027183))
+        marker.map = mapView;
+        
     }
 
     override func didReceiveMemoryWarning() {
