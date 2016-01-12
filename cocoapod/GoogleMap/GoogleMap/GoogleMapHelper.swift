@@ -56,4 +56,17 @@ class GoogleMapHelper{
         
         return marker
     }
+    
+    func createMarkers(list:[MarkerInfo]) -> [GMSMarker]{
+        var markers = [GMSMarker]()
+        
+        for markerInfo in list {
+            let marker = GoogleMapHelper.sharedInstance.createMarker(markerInfo)
+            markers.append(marker)
+        }
+        
+        return markers
+    }
 }
+
+

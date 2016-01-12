@@ -20,13 +20,6 @@ class FullScreenViewController: UIViewController {
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
         self.view = mapView
-        
-        var marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.023183))
-        marker.map = mapView;
-        
-        marker = GoogleMapHelper.sharedInstance.createMarker(MarkerInfo(latitude: 37.522831,longitude: 127.027183))
-        marker.map = mapView;
-        
     }
 
     override func didReceiveMemoryWarning() {

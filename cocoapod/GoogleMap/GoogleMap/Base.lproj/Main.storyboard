@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wTQ-qy-qWF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cff-EE-OnU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -20,28 +20,81 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-Mp-roR" customClass="GMSMapView">
                                 <rect key="frame" x="-4" y="64" width="383" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.95053957317209925" blue="0.95983439820668315" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="8yz-90-EGR"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhN-2Z-MeT">
+                                <rect key="frame" x="20" y="72" width="111" height="30"/>
+                                <state key="normal" title="selected marker"/>
+                                <connections>
+                                    <action selector="clickSelectedMarker:" destination="fA6-mh-AQS" eventType="touchUpInside" id="gGj-Ut-WpB"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-Vd-C0C">
+                                <rect key="frame" x="-4" y="372" width="383" height="251"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="marker info :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ae-f1-MKf">
+                                        <rect key="frame" x="19" y="82" width="96" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="Mod-ah-A3e"/>
+                                            <constraint firstAttribute="height" constant="21" id="WZi-Vb-ggU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add marker : long press" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyl-6o-5fI">
+                                        <rect key="frame" x="19" y="8" width="180" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="4Ro-8N-t05"/>
+                                            <constraint firstAttribute="width" constant="180" id="b7J-W7-Ncd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4Ae-f1-MKf" firstAttribute="leading" secondItem="Yyl-6o-5fI" secondAttribute="leading" id="9S0-RE-UmG"/>
+                                    <constraint firstItem="4Ae-f1-MKf" firstAttribute="top" secondItem="Yyl-6o-5fI" secondAttribute="bottom" constant="53" id="K8J-7i-93K"/>
+                                    <constraint firstItem="Yyl-6o-5fI" firstAttribute="top" secondItem="uMy-Vd-C0C" secondAttribute="top" constant="8" id="NBe-ik-JSx"/>
+                                    <constraint firstItem="4Ae-f1-MKf" firstAttribute="top" secondItem="Yyl-6o-5fI" secondAttribute="bottom" constant="53" id="Sdc-3u-qgj"/>
+                                    <constraint firstItem="Yyl-6o-5fI" firstAttribute="leading" secondItem="uMy-Vd-C0C" secondAttribute="leading" constant="19" id="le4-s4-Xwn"/>
+                                    <constraint firstItem="4Ae-f1-MKf" firstAttribute="leading" secondItem="uMy-Vd-C0C" secondAttribute="leading" constant="19" id="zIO-uv-Xy7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Sdc-3u-qgj"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uMy-Vd-C0C" firstAttribute="leading" secondItem="bjw-dL-DnY" secondAttribute="leadingMargin" constant="-20" id="2UF-Us-HvM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uMy-Vd-C0C" secondAttribute="trailing" constant="-20" id="ISs-vJ-NBm"/>
                             <constraint firstItem="mdf-Mp-roR" firstAttribute="leading" secondItem="bjw-dL-DnY" secondAttribute="leadingMargin" constant="-20" id="cq4-cV-x8a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mdf-Mp-roR" secondAttribute="trailing" constant="-20" id="gnf-YY-vhd"/>
+                            <constraint firstItem="uMy-Vd-C0C" firstAttribute="top" secondItem="mdf-Mp-roR" secondAttribute="bottom" constant="8" id="iPv-6d-CBo"/>
                             <constraint firstItem="mdf-Mp-roR" firstAttribute="top" secondItem="DvZ-dg-HBd" secondAttribute="bottom" id="lH3-vk-fca"/>
+                            <constraint firstItem="FsY-eX-ntj" firstAttribute="top" secondItem="uMy-Vd-C0C" secondAttribute="bottom" id="yqZ-Sq-2AF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="map" id="fje-GH-fw6"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="GoogleMap" id="9TR-CC-qOg"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="mapView" destination="mdf-Mp-roR" id="yF9-2E-0B1"/>
+                        <outlet property="mapView" destination="mdf-Mp-roR" id="AXX-Mn-Iob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Su9-8W-bzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550.5" y="424.5"/>
+            <point key="canvasLocation" x="933.5" y="860.5"/>
         </scene>
         <!--full screen-->
         <scene sceneID="rqa-6q-WBO">
@@ -57,45 +110,64 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="full screen map" id="rSj-fF-qAD"/>
+                    <navigationItem key="navigationItem" title="GoogleMap" id="1qR-In-x50"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLM-Jx-IUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="391"/>
+            <point key="canvasLocation" x="178" y="827"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--map-->
+        <scene sceneID="46A-5q-AFR">
+            <objects>
+                <navigationController id="7lr-vy-ejE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="map" id="ZdT-Km-0Vo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0bv-rI-W0b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fA6-mh-AQS" kind="relationship" relationship="rootViewController" id="Mvy-Nw-Uza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6A-XT-w8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="53"/>
+        </scene>
+        <!--full screen-->
         <scene sceneID="1Gd-03-k8P">
             <objects>
                 <navigationController id="wTQ-qy-qWF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="full screen" id="PAo-Ix-rNS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJZ-zJ-QKU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Cff-EE-OnU" kind="relationship" relationship="rootViewController" id="JkF-Zk-EKH"/>
+                        <segue destination="P1F-yi-Ygf" kind="relationship" relationship="rootViewController" id="1Kb-li-XBt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ag8-q9-GZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="-389"/>
+            <point key="canvasLocation" x="178" y="53"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--GoogleMap-->
         <scene sceneID="dRG-HP-GjR">
             <objects>
                 <tabBarController id="Cff-EE-OnU" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ovh-uY-oyY"/>
+                    <navigationItem key="navigationItem" title="GoogleMap" id="ovh-uY-oyY"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Oxv-Vv-6fj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="P1F-yi-Ygf" kind="relationship" relationship="viewControllers" id="cYc-7k-4By"/>
-                        <segue destination="fA6-mh-AQS" kind="relationship" relationship="viewControllers" id="xt0-aD-s7k"/>
+                        <segue destination="wTQ-qy-qWF" kind="relationship" relationship="viewControllers" id="Bfb-BC-f5t"/>
+                        <segue destination="7lr-vy-ejE" kind="relationship" relationship="viewControllers" id="DBr-Bn-boK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waw-q7-GRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="-389"/>
+            <point key="canvasLocation" x="546" y="-849"/>
         </scene>
     </scenes>
 </document>
