@@ -30,6 +30,7 @@ class MarkerInfo : CustomStringConvertible{
     var address:String?
     
     init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, builder: MarkerInfoBuilder){
+       
         marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(latitude, longitude)
         marker.appearAnimation = kGMSMarkerAnimationPop
@@ -44,9 +45,10 @@ class MarkerInfo : CustomStringConvertible{
     var description:String {
         let latitude = marker.position.latitude
         let longitude = marker.position.longitude
-        return "name : \(name), icon : \(icon), marker (\(latitude):\(longitude))"
+        return "name : \(name), icon : \(icon),\nmarker (\(latitude):\(longitude))"
     }
 }
+
 
 class MapInfo {
     var latitude:CLLocationDegrees

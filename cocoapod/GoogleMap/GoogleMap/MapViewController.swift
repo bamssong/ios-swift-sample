@@ -9,10 +9,19 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate ,GMSAutocompleteViewControllerDelegate{
     var markerInfos = [MarkerInfo]()
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var printDataLabel: UILabel!
+   
+    
+    @IBAction func clickedSearch(sender: UIBarButtonItem) {
+        let acController = GMSAutocompleteViewController()
+        acController.delegate = self
+        self.presentViewController(acController, animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +81,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     // MARK: - GMSMapViewDelegate
     func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
-        let markerInfo = MarkerInfo(latitude: 37.523831, longitude: 127.023183, builder: MarkerInfoBuilder{ builder in
+        let markerInfo = MarkerInfo(latitude: coordinate.latitude, longitude: coordinate.longitude, builder: MarkerInfoBuilder{ builder in
             })
         markerInfo.marker.map = mapView
         
@@ -83,6 +92,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        print("didTapMarker")
         mapView.selectedMarker = marker
         
         //move
@@ -96,10 +106,44 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             if(markerInfo.marker == marker){
                 //same
                 print(markerInfo)
+                printDataLabel.text = markerInfo.description
             }
         }
         
         return true
     }
-
+    
+    // MARK: - GMSAutocompleteViewControllerDelegate
+    func viewController(viewController: GMSAutocompleteViewController!, didAutocompleteWithPlace place: GMSPlace!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        //create marker
+        let markerInfo = MarkerInfo(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, builder: MarkerInfoBuilder{ builder in
+            builder.name = place.name
+            builder.address = place.formattedAddress
+            })
+        markerInfo.marker.map = mapView
+        markerInfos.append(markerInfo)
+        
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(place.coordinate) { (reponse, error) in
+            print(reponse.firstResult())
+            
+        }
+        
+        
+//        print("Place name: \(place.name)")
+//        print("Place address: \(place.formattedAddress)")
+//        print("Place attributions: \(place.attributions)")
+    }
+    
+    func viewController(viewController: GMSAutocompleteViewController!, didFailAutocompleteWithError error: NSError!) {
+        print("Error: \(error.description)")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func wasCancelled(viewController: GMSAutocompleteViewController!) {
+        print("Autocomplete was cancelled.")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

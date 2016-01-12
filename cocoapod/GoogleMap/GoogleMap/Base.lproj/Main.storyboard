@@ -27,7 +27,28 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-Vd-C0C">
                                 <rect key="frame" x="-4" y="372" width="383" height="251"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-P4-MiI">
+                                        <rect key="frame" x="8" y="0.0" width="367" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="Fyv-gl-dqZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Fyv-gl-dqZ"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hjT-P4-MiI" firstAttribute="top" secondItem="uMy-Vd-C0C" secondAttribute="top" id="6wj-Hh-IJK"/>
+                                    <constraint firstItem="hjT-P4-MiI" firstAttribute="leading" secondItem="uMy-Vd-C0C" secondAttribute="leading" constant="8" id="ej1-CW-HKC"/>
+                                    <constraint firstAttribute="trailing" secondItem="hjT-P4-MiI" secondAttribute="trailing" constant="8" id="yD8-ma-6Ul"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,11 +64,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="map" id="fje-GH-fw6"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="GoogleMap" id="9TR-CC-qOg"/>
+                    <navigationItem key="navigationItem" title="GoogleMap" id="9TR-CC-qOg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="P4w-st-sCL">
+                            <connections>
+                                <action selector="clickedSearch:" destination="fA6-mh-AQS" id="BsH-U4-tYA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="mdf-Mp-roR" id="AXX-Mn-Iob"/>
+                        <outlet property="printDataLabel" destination="hjT-P4-MiI" id="mwk-6H-XfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Su9-8W-bzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
