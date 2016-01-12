@@ -45,10 +45,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate ,GMSAutocompleteVi
         let sampleDataList = [
             (latitude: 37.522831,longitude: 127.023183),
             (latitude: 37.522831,longitude: 127.024183),
-            (latitude: 37.522831,longitude: 127.025183),
-            (latitude: 37.522831,longitude: 127.026283),
-            (latitude: 37.522831,longitude: 127.027383),
-            (latitude: 37.522831,longitude: 127.028483)
+            (latitude: 37.522831,longitude: 127.025183)
         ]
         
         for data in sampleDataList {
@@ -115,26 +112,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate ,GMSAutocompleteVi
     
     // MARK: - GMSAutocompleteViewControllerDelegate
     func viewController(viewController: GMSAutocompleteViewController!, didAutocompleteWithPlace place: GMSPlace!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-        //create marker
-        let markerInfo = MarkerInfo(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, builder: MarkerInfoBuilder{ builder in
-            builder.name = place.name
-            builder.address = place.formattedAddress
-            })
-        markerInfo.marker.map = mapView
-        markerInfos.append(markerInfo)
-        
+       
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(place.coordinate) { (reponse, error) in
-            print(reponse.firstResult())
+            let address = reponse.firstResult()
+            print(address)
+            //create marker
+            let markerInfo = MarkerInfo(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, builder: MarkerInfoBuilder{ builder in
+                builder.name = place.name
+                builder.address = address.lines.description
+                //builder.address = address.locality
+                })
+            markerInfo.marker.map = self.mapView
             
+            //move
+            let point = self.mapView.projection.pointForCoordinate(markerInfo.marker.position)
+            let newPoint = self.mapView.projection.coordinateForPoint(point)
+            let camera = GMSCameraUpdate.setTarget(newPoint)
+            self.mapView.animateWithCameraUpdate(camera)
+
+            
+            self.markerInfos.append(markerInfo)
         }
-        
-        
-//        print("Place name: \(place.name)")
-//        print("Place address: \(place.formattedAddress)")
-//        print("Place attributions: \(place.attributions)")
+         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func viewController(viewController: GMSAutocompleteViewController!, didFailAutocompleteWithError error: NSError!) {

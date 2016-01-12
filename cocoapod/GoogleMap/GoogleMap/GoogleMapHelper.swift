@@ -45,7 +45,7 @@ class MarkerInfo : CustomStringConvertible{
     var description:String {
         let latitude = marker.position.latitude
         let longitude = marker.position.longitude
-        return "name : \(name), icon : \(icon),\nmarker (\(latitude):\(longitude))"
+        return "name : \(name), address : \(address),\nmarker (\(latitude):\(longitude))"
     }
 }
 
