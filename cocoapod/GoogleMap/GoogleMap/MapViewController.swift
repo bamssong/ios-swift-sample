@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
 
         //https://developers.google.com/maps/documentation/ios-sdk/start?hl=ko
         let camera = GMSCameraPosition.cameraWithLatitude(37.522831,longitude: 127.027183, zoom: 14)
+        mapView.delegate = self
         mapView.camera = camera
         mapView.myLocationEnabled = true
         
@@ -57,5 +58,17 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - GMSMapViewDelegate
+    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
+        let markerInfo = MarkerInfo(latitude: coordinate.latitude,longitude: coordinate.longitude)
+        
+        //add marker.
+        let marker = GoogleMapHelper.sharedInstance.createMarker(markerInfo)
+        marker.map = mapView;
+        
+        //show view - info
+        markerInfo.name = "테스트1"
+    }
 
 }
