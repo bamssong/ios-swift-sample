@@ -9,16 +9,42 @@ import UIKit
 import GoogleMaps
 
 
-class MarkerInfo {
-    var latitude:CLLocationDegrees
-    var longitude:CLLocationDegrees
-    
+class MarkerInfoBuilder {
     var name:String?
-    var image:UIImage?
+    var icon:UIImage?
+    var address:String?
     
-    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees){
-        self.latitude = latitude
-        self.longitude = longitude
+    typealias BuilderClosure = (MarkerInfoBuilder) -> ()
+    
+    init(builderClosuer:BuilderClosure) {
+        builderClosuer(self)
+    }
+}
+
+
+class MarkerInfo : CustomStringConvertible{
+    var marker:GMSMarker
+
+    var name:String?
+    var icon:UIImage?
+    var address:String?
+    
+    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, builder: MarkerInfoBuilder){
+        marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(latitude, longitude)
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        //marker.icon = UIImage(named: "flag_icon")
+        
+        //option value
+        icon = builder.icon
+        name = builder.name
+        address = builder.address
+    }
+    
+    var description:String {
+        let latitude = marker.position.latitude
+        let longitude = marker.position.longitude
+        return "name : \(name), icon : \(icon), marker (\(latitude):\(longitude))"
     }
 }
 
@@ -33,40 +59,4 @@ class MapInfo {
         self.longitude = longitude
         self.zoom = zoom
     }
-    
-    
- }
-
-class GoogleMapHelper{
-    static let sharedInstance = GoogleMapHelper()
-    
-    // MARK: - init
-    init() {
-
-    }
-    
-    // MARK: - marker
-    func createMarker(markerInfo: MarkerInfo) -> GMSMarker{
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(
-            markerInfo.latitude, markerInfo.longitude)
-
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        //marker.icon = UIImage(named: "flag_icon")
-        
-        return marker
-    }
-    
-    func createMarkers(list:[MarkerInfo]) -> [GMSMarker]{
-        var markers = [GMSMarker]()
-        
-        for markerInfo in list {
-            let marker = GoogleMapHelper.sharedInstance.createMarker(markerInfo)
-            markers.append(marker)
-        }
-        
-        return markers
-    }
 }
-
-
