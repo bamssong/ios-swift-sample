@@ -10,9 +10,6 @@
 ## hello
 [iOS 프로젝트 만드는 방법](https://github.com/bamssong/ios-swift-sample/blob/master/hello/README.md)
 
-## sample
-[샘플 모음](https://github.com/bamssong/ios-swift-sample/blob/master/sample/README.md)
-
 
 ## cocoapod
 [샘플 모음](https://github.com/bamssong/ios-swift-sample/blob/master/cocoapod/README.md)
